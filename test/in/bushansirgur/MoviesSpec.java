@@ -17,7 +17,7 @@ class MoviesSpec {
 		//Act -> call the method
 		List<String> list = movies.getMovies();
 		
-		//Assert -> evaualted the condition
+		//Assert -> evaluate the condition
 		//success scenario
 		assertTrue(list.isEmpty(), () -> "Movies should be empty");
 		//failure scenario
