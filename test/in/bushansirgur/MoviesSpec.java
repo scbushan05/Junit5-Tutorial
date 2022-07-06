@@ -5,11 +5,14 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
 
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+@DisplayName("Movies")
 class MoviesSpec {
 
 	@Test
+	@DisplayName("list is empty when no movies are added")
 	public void moviesEmptyWhenNoMoviesAdded() {
 		//Arrange -> setup the data 
 		Movies movies = new Movies();
