@@ -28,20 +28,25 @@ class MoviesSpec {
 		assertFalse(list.isEmpty(), () -> "Movies should be empty");
 	}
 	
-	//Error: if a test case throws an exception then it is error
-	//Failure: if a test case fails then it is failure
-	
-	//fail() is used to fail a test case with a given message
-	
 	@Test
 	public void failureTestCase() {
 		fail(() -> "This is a failed test case");
 	}
 
 }
-
-
-
+/*
+Assert Method 		| 	What It Does
+----------------------------------------------------------------------
+assertTrue 			|	Assert that condition is true
+assertFalse 		|	Assert that condition is false
+assertNull 			|	Assert that object is null
+assertNotNull 		|	Assert that object is not null
+assertEquals 		|	Assert that expected and actual are equal
+assertNotEquals 	|	Assert that expected and actual are not equal
+assertArrayEquals 	|	Assert that expected and actual arrays are equals
+assertSame Assert 	|	that expected and actual refer to the same object
+assertNotSame 		|	Assert that expected and actual do not refer to the same object
+*/
 
 
 
