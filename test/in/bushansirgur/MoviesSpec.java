@@ -2,6 +2,7 @@ package in.bushansirgur;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.List;
 
@@ -26,5 +27,29 @@ class MoviesSpec {
 		//failure scenario
 		assertFalse(list.isEmpty(), () -> "Movies should be empty");
 	}
+	
+	//Error: if a test case throws an exception then it is error
+	//Failure: if a test case fails then it is failure
+	
+	//fail() is used to fail a test case with a given message
+	
+	@Test
+	public void failureTestCase() {
+		fail(() -> "This is a failed test case");
+	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
