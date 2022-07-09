@@ -34,20 +34,14 @@ class MoviesSpec {
 	}
 
 }
-/*
-Assert Method 		| 	What It Does
-----------------------------------------------------------------------
-assertTrue 			|	Assert that condition is true
-assertFalse 		|	Assert that condition is false
-assertNull 			|	Assert that object is null
-assertNotNull 		|	Assert that object is not null
-assertEquals 		|	Assert that expected and actual are equal
-assertNotEquals 	|	Assert that expected and actual are not equal
-assertArrayEquals 	|	Assert that expected and actual arrays are equals
-assertSame Assert 	|	that expected and actual refer to the same object
-assertNotSame 		|	Assert that expected and actual do not refer to the same object
-*/
 
+// Setup phase -> class level
+
+// Setup phase
+// Execution phase
+// Clean up
+
+// clean up phase -> class level
 
 
 
