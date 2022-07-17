@@ -7,17 +7,23 @@ import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.List;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 @DisplayName("Movies")
 class MoviesSpec {
 
+	private Movies movies;
+	
+	@BeforeEach
+	void init() {
+		movies = new Movies();
+	}
+	
 	@Test
 	@DisplayName("list is empty when no movies are added")
 	public void moviesEmptyWhenNoMoviesAdded() {
-		//Arrange -> setup the data 
-		Movies movies = new Movies();
 		
 		//Act -> call the method
 		List<String> list = movies.getMovies();
@@ -29,8 +35,8 @@ class MoviesSpec {
 	}
 	
 	@Test
+	@DisplayName("list contains two movies when two movies added")
 	void movieslistContainsTwoMoviesWhenTwoMoviesAdded() {
-		Movies movies = new Movies();
 		movies.add("Avatar 2");
 		movies.add("Mission Impossible 6");
 		List<String> list = movies.list();
