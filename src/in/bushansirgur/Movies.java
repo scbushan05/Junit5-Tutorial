@@ -1,8 +1,8 @@
 package in.bushansirgur;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -14,8 +14,8 @@ public class Movies {
 		return Collections.emptyList();
 	}
 
-	public void add(String movie) {
-		movies.add(movie);
+	public void add(String... multipleMovies) {
+		Arrays.stream(multipleMovies).forEach(movie -> movies.add(movie));
 	}
 
 	public List<String> list() {

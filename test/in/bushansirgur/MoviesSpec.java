@@ -1,9 +1,7 @@
 package in.bushansirgur;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,8 +36,7 @@ class MoviesSpec {
 	@Test
 	@DisplayName("list contains two movies when two movies added")
 	void movieslistContainsTwoMoviesWhenTwoMoviesAdded() {
-		movies.add("Avatar 2");
-		movies.add("Mission Impossible 6");
+		movies.add("Avatar 2", "Mission Impossible 6");
 		List<String> list = movies.list();
 		assertEquals(2, list.size(), () -> "Movies list should have two movies");
 	}
@@ -47,16 +44,21 @@ class MoviesSpec {
 	@Test
 	@DisplayName("should be arranged in alphabetically")
 	void moviesArrangedInAlphabeticalOrder() {
-		movies.add("Spider man 6");
-		movies.add("Terminator 5");
-		movies.add("Mission impossible 6");
-		movies.add("Avatar 2");
+		movies.add("Spider man 6", "Terminator 5", "Mission impossible 6", "Avatar 2");
 		List<String> list = movies.arrange();
 		assertEquals(Arrays.asList("Avatar 2", "Mission impossible 6", "Spider man 6", "Terminator 5"), 
 				list, 
 				() -> "should return movies alphabetically");
 	}
 
+	@Test
+	@DisplayName("should be empty when no movies passed to the add method")
+	void moviesShouldBeEmptyWhenAddIsCalledWithMovies() {
+		movies.add();
+		List<String> list = movies.list();
+		assertTrue(list.isEmpty(), () -> "Movies should be empty");
+	}
+	
 }
 
 
