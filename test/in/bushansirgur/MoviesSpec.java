@@ -1,7 +1,9 @@
 package in.bushansirgur;
 
+import static org.junit.Assert.fail;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.fail;
 
 import java.util.Arrays;
 import java.util.List;
@@ -59,6 +61,19 @@ class MoviesSpec {
 		assertTrue(list.isEmpty(), () -> "Movies should be empty");
 	}
 	
+	@Test
+	@DisplayName("should be immutable when new movie is added")
+	void moviesReturnedShouldBeImmutable() {
+		Movies m = new Movies();
+		m.add("Mission impossible 6", "Kung fu panda 6", "Avatar 2");
+		List<String> list = m.list();
+		try {
+			list.add("Fast and Furious 10");
+			fail(() -> "Should not able to add new movies");
+		} catch (Exception e) {
+			assertTrue(e instanceof UnsupportedOperationException, () -> "Should throw unsupported operation exception");
+		}
+	}
 }
 
 
