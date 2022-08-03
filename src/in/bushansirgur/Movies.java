@@ -19,7 +19,7 @@ public class Movies {
 	}
 
 	public List<String> list() {
-		return movies;
+		return Collections.unmodifiableList(movies);
 	}
 
 	public List<String> arrange() {
